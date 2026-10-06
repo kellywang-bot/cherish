@@ -1,0 +1,104 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.animated-bg {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    min-width:1500px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2839 / 2048 ;
+    background-image: url('Project1-Images/bganimationimg.jpg');
+    background-repeat: no-repeat;
+    /* Explicit strip sizing keeps step boundaries stable as the box scales. */
+    background-size: calc(16 * 100%) 100%;
+    background-position: 0 0;
+    animation-name: moveBackground;
+    animation-duration: 1s;
+    /* 100% background travel spans 15 frame-width moves on a 16-frame strip. */
+    animation-timing-function: steps(13, end);
+    animation-iteration-count: infinite;
+}
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 20%;
+    transform: translate(-50%, -50%); 
+    font-family: good-kitty, sans-serif;
+    background-color: rgb(133, 164, 123);
+    border-radius: 200px;
+    filter: blur(50px);  
+    opacity: 20%;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index:4;
+}
+
+.cherish {
+    position: absolute;
+    font-family: good-kitty, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    z-index: 5;
+}
+
+#c{
+    top: 55vh;
+    left: 38vw;
+}
+
+#h {
+    top: 51vh;
+    left: 42vw;
+}
+#e{
+    top: 47vh;
+    left: 46vw;
+}
+
+#r {
+    top: 45vh;
+    left: 50vw;
+}
+
+#i {
+    top: 47vh;
+    left: 54vw;
+}
+
+#s {
+    top: 51vh;
+    left: 58vw;
+}
+
+#h2{
+    top: 55vh;
+    left: 62vw;
+}
+
+/* Change the variable value on hover (e.g., slow it down to 10 seconds) */
+.cherish:hover ~ .animated-bg {
+  animation-duration: 3s;
+}
+
+
+.cherish:hover {
+     font-family: good-kitty, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  font-size: 40px;
+  transition-duration: 400ms;
+}
+
+@keyframes moveBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
